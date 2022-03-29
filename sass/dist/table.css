@@ -1,0 +1,131 @@
+.section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 2fr;
+  }
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, auto);
+  width: 70vw;
+  height: 100vh;
+  text-align: center;
+  background-color: #609EA1;
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .grid-container {
+    width: 100vw;
+    height: 75vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .grid-container {
+    width: 70vw;
+    height: 100vh;
+  }
+}
+
+.grid-cell {
+  background-color: #609EA1;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #DEB986;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .grid-cell {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+:root {
+  --mark-size: calc(120px*0.8);
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  :root {
+    --mark-size: calc(80px*0.8);
+  }
+}
+
+.grid-cell:first-child,
+.grid-cell:nth-child(2),
+.grid-cell:nth-child(3) {
+  border-top: none;
+}
+
+.grid-cell:first-child,
+.grid-cell:nth-child(4),
+.grid-cell:nth-child(7) {
+  border-left: none;
+}
+
+.grid-cell:nth-child(3),
+.grid-cell:nth-child(6),
+.grid-cell:nth-child(9) {
+  border-right: none;
+}
+
+.grid-cell:nth-child(7),
+.grid-cell:nth-child(8),
+.grid-cell:nth-child(9) {
+  border-bottom: none;
+}
+
+.grid-cell.x::before,
+.grid-cell.x::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size)*0.10);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.grid-cell.x::before {
+  transform: rotate(-45deg);
+}
+
+.grid-cell.x::after {
+  transform: rotate(45deg);
+}
+
+.grid-cell.x,
+.grid-cell.y {
+  cursor: not-allowed;
+}
+
+.grid-cell.o:before,
+.grid-cell.o:after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size)*0.9);
+  height: var(--mark-size);
+  background-color: black;
+  border-radius: 50%;
+  border: 10px solid white;
+  background-color: #609EA1;
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .grid-cell.o:before,
+.grid-cell.o:after {
+    border: 10px solid white;
+  }
+}

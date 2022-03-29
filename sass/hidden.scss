@@ -1,0 +1,148 @@
+@import "constants.scss";
+@import "mixins.scss";
+
+.message {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-green;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    padding: 2rem;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 60px;
+        margin-top: 230px;
+        height: 300px;
+        width: 60vw;
+        background-color: $color-green;
+        border: 3px solid rgb(78, 123, 126);
+        text-transform: uppercase;
+
+        @include respond(mobile) {
+            padding-top: 20px;
+            font-size: 15px;
+            height: 170px;
+            width: 80vw;
+            margin: auto;
+        }
+
+        @include respond(tablet) {
+            width: 80%;
+            padding-top: 20px;
+            margin: auto;
+
+        }
+
+        &__label {
+            display: inline-block;
+            font-family: monospace;
+            letter-spacing: 0.2em;
+
+            @include respond(mobile) {
+                letter-spacing: 0.5em;
+                font-size: 20px;
+            }
+        }
+
+        input {
+            border-radius: 6px;
+            width: 300px;
+            height: 50px;
+            margin-top: 15px;
+            border: white;
+
+            @include respond(mobile) {
+                width: 100px;
+                border-radius: 3px;
+                height: 30px;
+            }
+        }
+
+        &--btn {
+            background-color: $color-rose;
+            height: 3rem;
+            width: 13rem;
+            font-size: 20px;
+            border: 1px solid $color-rose;
+            cursor: pointer;
+            color: white;
+            font-family: monospace;
+            margin-top: 26px;
+
+            @include respond(mobile) {
+                margin-top: 10px;
+                width: 6rem;
+                height: 24px;
+                font-size: 11px;
+            }
+        }
+    }
+
+    @include respond(mobile) {
+        width: 100vw;
+    }
+
+    @include respond(tablet) {
+        width: 100vw;
+    }
+}
+
+.show {
+    font-size: 100px;
+    color: white;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.wrap {
+    background-color: $color-green;
+    height: 100px;
+}
+
+.moves {
+    padding-left: 10px;
+    font-size: 2.8rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    @include respond(mobile) {
+        font-size: 0.8rem;
+    }
+
+    @include respond(tablet) {
+        font-size: 1.8rem;
+    }
+}
+
+.winner {
+    padding-left: 10px;
+    font-size: 2.8rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    @include respond(mobile) {
+        font-size: 0.8rem;
+    }
+
+    @include respond(tablet) {
+        font-size: 1.8rem;
+    }
+}
